@@ -66,7 +66,9 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'binding_of_caller'
   gem "capybara"
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'pry-rails'
   gem "selenium-webdriver"
-
 end
