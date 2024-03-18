@@ -19,40 +19,40 @@ ActiveRecord::Schema[7.0].define(version: 20_240_304_104_355) do
   enable_extension 'uuid-ossp'
 
   create_table 'guests', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'email'
-    t.string 'address'
-    t.string 'phone_number'
+    t.string 'first_name', null: false
+    t.string 'last_name', null: false
+    t.string 'email', null: false
+    t.string 'address', null: false
+    t.string 'phone_number', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
 
-  create_table 'reservations', force: :cascade do |t|
-    t.date 'checkin'
-    t.date 'checkout'
-    t.string 'status'
-    t.string 'room_id'
-    t.string 'guest_id'
-    t.string 'user_id'
+  create_table 'reservations', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
+    t.datetime 'checkin_at', null: false
+    t.datetime 'checkout_at', null: false
+    t.integer 'status', default: 0, null: false
+    t.string 'room_id', null: false
+    t.string 'guest_id', null: false
+    t.string 'user_id', null: false
+    t.string 'book_code', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
 
   create_table 'rooms', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.integer 'number'
-    t.string 'category'
-    t.boolean 'pool'
-    t.string 'status'
-    t.integer 'capacity'
+    t.integer 'number', null: false
+    t.integer 'room_type', default: 0, null: false
+    t.integer 'status', default: 0, null: false
+    t.integer 'capacity', default: 1, null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
 
   create_table 'users', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
-    t.string 'username'
-    t.string 'email'
-    t.string 'password'
+    t.string 'username', null: false
+    t.string 'email', null: false
+    t.string 'password', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
