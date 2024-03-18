@@ -9,9 +9,9 @@ RSpec.describe User, type: :model do
     expect(user).to be_valid
   end
 
-  # it '#User not valid with missing attributes' do
-  #   user = User.new(username: 'JohnDoe', password: 'password')
+  it '#User not valid with missing attributes' do
+    user = User.new(username: 'JohnDoe', password: 'password')
 
-  #   expect(user).not_to be_valid
-  # end
+    expect(user).not_to be_valid
+  end
 end
