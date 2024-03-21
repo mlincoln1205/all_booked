@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-class Room < ApplicationRecord # rubocop:disable Style/Documentation
+class Room < ApplicationRecord # :nodoc:
   # Associations
   has_many :reservations, dependent: :destroy
+
   # Enums
-  enum room_type: %i[single double suite]
+  enum room_type: %i[single double triple family_suite]
   enum status: %i[available unavailable]
 
   # Validations
