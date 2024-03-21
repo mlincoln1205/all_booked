@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Reservation < ApplicationRecord
+class Reservation < ApplicationRecord # :nodoc:
   # Enums
   enum status: %i[pending confirmed canceled]
 

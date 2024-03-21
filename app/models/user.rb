@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User < ApplicationRecord # rubocop:disable Style/Documentation
+class User < ApplicationRecord # :nodoc:
   # Associations
   has_many :reservations, dependent: :destroy
 

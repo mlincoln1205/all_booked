@@ -6,8 +6,6 @@ RSpec.describe Reservation, type: :model do
   it '#Reservation valid with all attributes' do
     reservation = create(:reservation)
 
-binding.pry
-
     expect(reservation).to be_valid
   end
 

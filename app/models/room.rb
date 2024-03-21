@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Room < ApplicationRecord
+class Room < ApplicationRecord # :nodoc:
   # Associations
   has_many :reservations, dependent: :destroy
 
