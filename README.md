@@ -1,24 +1,16 @@
-# README
+# All Booked
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Targets
+* Create a reservations application, which connects to external portals (e.g. Booking.com, Expedia....), then make possible to
+handle the informations internally with security and high performance;
 
-Things you may want to cover:
+* Create nice reports and statistics about the revenues, Revpar, ocupation and management tools.
 
-* Ruby version
+Technical details
+* Ruby version: 3.1.0
 
-* System dependencies
+* Rails version: 7.0.8
 
-* Configuration
+* Database: Postgresql
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run the test suite: $rspec spec/path
