@@ -11,6 +11,6 @@ class Room < ApplicationRecord # :nodoc:
   # Validations
   validates :number, presence: true, uniqueness: true
   validates :room_type, presence: true
-  validates :status, presence: true
+  validates :room_status, presence: true
   validates :capacity, presence: true
 end

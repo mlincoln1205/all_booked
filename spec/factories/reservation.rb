@@ -8,7 +8,7 @@ FactoryBot.define do
 
     checkin_at { Faker::Date.forward(days: 15) }
     checkout_at { Faker::Date.forward(days: 30) }
-    status { 'pending' }
+    reservation_status { 'pending' }
     book_code { "RSV-#{Faker::Number.number(digits: 6)}" }
   end
 end
