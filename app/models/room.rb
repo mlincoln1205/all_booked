@@ -6,7 +6,7 @@ class Room < ApplicationRecord # :nodoc:
 
   # Enums
   enum room_type: %i[single double triple family_suite]
-  enum status: %i[available unavailable]
+  enum room_status: %i[available unavailable]
 
   # Validations
   validates :number, presence: true, uniqueness: true

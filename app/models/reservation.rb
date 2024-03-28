@@ -2,7 +2,9 @@
 
 class Reservation < ApplicationRecord # :nodoc:
   # Enums
-  enum status: %i[pending confirmed canceled]
+  enum reservation_status: %i[pending confirmed canceled]
+
+  accepts_nested_attributes_for :room, :guest, :user, allow_destroy: true
 
   # Associations
   belongs_to :room
