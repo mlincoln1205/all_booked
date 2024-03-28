@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_240_304_104_355) do
+ActiveRecord::Schema[7.0].define(version: 20_240_321_160_635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'pgcrypto'
   enable_extension 'plpgsql'
@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 20_240_304_104_355) do
   create_table 'reservations', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
     t.datetime 'checkin_at', null: false
     t.datetime 'checkout_at', null: false
-    t.integer 'status', default: 0, null: false
+    t.integer 'reservation_status', default: 0, null: false
     t.string 'room_id', null: false
     t.string 'guest_id', null: false
     t.string 'user_id', null: false
@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 20_240_304_104_355) do
   create_table 'rooms', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
     t.integer 'number', null: false
     t.integer 'room_type', default: 0, null: false
-    t.integer 'status', default: 0, null: false
+    t.integer 'room_status', default: 0, null: false
     t.integer 'capacity', default: 1, null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false

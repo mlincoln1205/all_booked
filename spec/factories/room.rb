@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :room do
     room_type { 'double' }
     number { 101 }
-    status { 'available' }
+    room_status { 'available' }
     capacity { 2 }
   end
 end
